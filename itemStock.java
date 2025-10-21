@@ -2,6 +2,10 @@ public class itemStock {
     String namaBahan;
     int jumlahStok;
 
+    public itemStock(String string, int i) {
+        //TODO Auto-generated constructor stub
+    }
+
     public void ItemStok(String nama, int jumlah) {
         this.namaBahan = nama;
         this.jumlahStok = jumlah;
