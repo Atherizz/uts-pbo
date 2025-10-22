@@ -5,7 +5,7 @@ import java.util.Random;
 public class Pelanggan {
      private String nama;
     private List<Makanan> pesanan;
-    private int kesabaran; // Batas waktu tunggu acak (misal 40-60 tick)
+    private int kesabaran;
     private int waktuKedatangan;
     private int batasAkhirSabar; 
     private int waktuSelesaiMasak;
