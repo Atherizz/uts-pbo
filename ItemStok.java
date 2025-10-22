@@ -1,14 +1,12 @@
-public class itemStock {
-    String namaBahan;
-    int jumlahStok;
+public class ItemStok {
+    private String namaBahan;
+    private int jumlahStok;
+    private int hargaBeli; 
 
-    public itemStock(String string, int i) {
-        //TODO Auto-generated constructor stub
-    }
-
-    public void ItemStok(String nama, int jumlah) {
+    public ItemStok(String nama, int jumlah, int hargaBeli) {
         this.namaBahan = nama;
         this.jumlahStok = jumlah;
+        this.hargaBeli = hargaBeli;
     }
 
     public void kurangiStok(int jumlah) {
@@ -29,5 +27,9 @@ public class itemStock {
 
     public int getJumlah() {
         return this.jumlahStok;
+    }
+
+    public int getHargaBeli() {
+        return this.hargaBeli;
     }
 }

@@ -1,5 +1,6 @@
 
-public abstract class Karyawan implements IBekerja {
+
+public abstract class Karyawan {
     
     protected String namaPeran;
     protected int levelKeahlian;  
@@ -17,6 +18,9 @@ public abstract class Karyawan implements IBekerja {
         return this.levelKeahlian;
     }
     
-    @Override
+ 
     public abstract void bekerja(Restoran restoran); 
+
+    protected abstract int hitungBiayaAksi(Pelanggan pelanggan);
+
 }
