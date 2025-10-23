@@ -34,22 +34,22 @@ public class Restoran {
     }
 
         private void inisialisasiMenu() {
-        daftarMenu.add(new Makanan("Burger Keju", 35000, 15, 8, List.of("Roti", "Daging", "Keju", "Selada", "Roti")));
-        daftarMenu.add(new Makanan("Kentang Goreng", 15000, 8, 0, List.of()));
-        daftarMenu.add(new Makanan("Soda Stroberi", 12000, 0, 5, List.of("Gelas", "Es Batu", "Sirup Stroberi", "Soda")));
+        daftarMenu.add(new Makanan("Burger Keju", 35000, 20, List.of("Roti", "Daging", "Keju", "Selada", "Roti")));
+        daftarMenu.add(new Makanan("Kentang Goreng", 15000, 15,  List.of()));
+        daftarMenu.add(new Makanan("Soda Stroberi", 12000, 0, List.of("Gelas", "Es Batu", "Sirup Stroberi", "Soda")));
         }   
 
         private void inisialisasiStok() {
-        daftarStok.add(new ItemStok("Daging", 50, 8000));
-        daftarStok.add(new ItemStok("Roti", 100, 2500));
-        daftarStok.add(new ItemStok("Keju", 30, 4000));
-        daftarStok.add(new ItemStok("Selada", 30, 1500));
-        daftarStok.add(new ItemStok("Kentang", 100, 3000));
-        daftarStok.add(new ItemStok("Gelas", 50, 1000));
-        daftarStok.add(new ItemStok("Es Batu", 200, 200));
-        daftarStok.add(new ItemStok("Sirup Stroberi", 100, 3500));
-        daftarStok.add(new ItemStok("Soda", 100, 2000));
-        daftarStok.add(new ItemStok("Garam", 100, 100));
+        daftarStok.add(new ItemStok("Daging", 3, 8000));
+        daftarStok.add(new ItemStok("Roti", 3, 2500));
+        daftarStok.add(new ItemStok("Keju", 3, 4000));
+        daftarStok.add(new ItemStok("Selada", 3, 1500));
+        daftarStok.add(new ItemStok("Kentang",3, 3000));
+        daftarStok.add(new ItemStok("Gelas", 3, 1000));
+        daftarStok.add(new ItemStok("Es Batu", 3, 200));
+        daftarStok.add(new ItemStok("Sirup Stroberi", 3, 3500));
+        daftarStok.add(new ItemStok("Soda", 3, 2000));
+        daftarStok.add(new ItemStok("Garam", 3, 100));
         }
 
         public void MajukanWaktu(int biayaAksi) {
@@ -62,13 +62,21 @@ public class Restoran {
         }
     }
 
-    private void SimulasiKedatanganPelanggan() {
+        public void SimulasiKedatanganPelanggan() {
         if (random.nextInt(100) < 10) { 
             Pelanggan baru = new Pelanggan(this.waktuSimulasi, this.daftarMenu);
             this.antrianKasir.add(baru);
             System.out.println("\n[SISTEM] Pelanggan baru (" + baru.getNama() + ") datang! Sabar s/d tick " + baru.getBatasAkhirSabar());
         }
-    }
+        }   
+
+    public void inisialisasiPelanggan() {
+            Pelanggan baru1 = new Pelanggan(this.waktuSimulasi, this.daftarMenu);
+            Pelanggan baru2 = new Pelanggan(this.waktuSimulasi, this.daftarMenu);
+            this.antrianKasir.add(baru1);
+            this.antrianKasir.add(baru2);
+        }
+    
 
     private void CekKesabaranPelanggan() {
         Pelanggan p = antrianKasir.peek();
@@ -161,16 +169,31 @@ public class Restoran {
         if (antrianKasir.isEmpty()) {
             System.out.println("Kosong.");
         } else {
-            antrianKasir.forEach(p -> System.out.print(p.getNama() + " (s/d " + p.getBatasAkhirSabar() + ") | "));
-            System.out.println();
+            for (Pelanggan p : antrianKasir) {
+                System.out.print(p.getNama() + " (s/d " + p.getBatasAkhirSabar() + ") | ");
+            }
+            System.out.println(); 
         }
         
         System.out.print("Proses Masak: ");
         if (daftarMemasak.isEmpty()) {
             System.out.println("Kosong.");
         } else {
-            daftarMemasak.forEach(p -> System.out.print(p.getNama() + " (Matang: " + p.getWaktuSelesaiMasak() + ") | "));
-            System.out.println();
+            for (Pelanggan p : daftarMemasak) {
+                System.out.print(p.getNama() + " (Matang: " + p.getWaktuSelesaiMasak() + ") | ");
+            }
+            System.out.println(); 
+        }
+
+
+        System.out.print("Antrian Masak: ");
+        if (antrianMasak.isEmpty()) { 
+             System.out.println("Kosong.");
+        } else {
+             for (Pelanggan p : antrianMasak) { 
+                 System.out.print(p.getNama() + " | ");
+             }
+             System.out.println();
         }
     }
 }

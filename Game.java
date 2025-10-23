@@ -18,7 +18,10 @@ public class Game {
     }
 
     public void run() {
+
         System.out.println("Selamat Datang di Restoran Cepat Saji!");
+
+        restoran.inisialisasiPelanggan();
 
         while (isGameRunning) {
             restoran.TampilkanStatus();
