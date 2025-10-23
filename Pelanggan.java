@@ -19,7 +19,7 @@ public class Pelanggan {
         this.pesanan = buatPesananRandom(daftarMenu);
         
         Random rand = new Random();
-        this.kesabaran = rand.nextInt(21) + 40; 
+        this.kesabaran = rand.nextInt(21) + 25; 
         this.batasAkhirSabar = this.waktuKedatangan + this.kesabaran;
     }
 
@@ -30,7 +30,6 @@ public class Pelanggan {
         int jumlahItem = rand.nextInt(2) + 1; 
         
         for (int i = 0; i < jumlahItem; i++) {
-
             Makanan itemRandom = daftarMenu.get(rand.nextInt(daftarMenu.size()));
             pesananAcak.add(itemRandom);
         }

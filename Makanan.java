@@ -7,7 +7,7 @@ public class Makanan {
     private int durasiMasak;
     private List<String> resep; 
 
-    public Makanan(String nama, int harga, int durasiMasak, int durasiRakit, List<String> resep) {
+    public Makanan(String nama, int harga, int durasiMasak, List<String> resep) {
         this.nama = nama;
         this.harga = harga;
         this.durasiMasak = durasiMasak;
