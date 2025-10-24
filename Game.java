@@ -39,7 +39,7 @@ public class Game {
                     aksiLogistik();
                     break;
                 case "4":
-                    restoran.tampilkanStokBahan();
+                    stasiunLogistik.tampilkanStok(restoran);
                     break;
                 case "9":
                     aksiMajukanWaktu();
