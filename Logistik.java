@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Logistik extends Karyawan {
+public class Logistik extends Karyawan implements IStorable {
 
     public Logistik() {
         super("Logistik", 1);

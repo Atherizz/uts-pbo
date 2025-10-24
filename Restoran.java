@@ -52,21 +52,6 @@ public class Restoran {
         daftarStok.add(new ItemStok("Garam", 3, 100));
     }
 
-    public void tampilkanStokBahan() {
-        System.out.println("\n--- DAFTAR STOK BAHAN ---");
-        System.out.println("----------------------------------------");
-        System.out.printf("%-20s | %-5s | %s%n", "Nama Bahan", "Stok", "Harga Beli");
-        System.out.println("----------------------------------------");
-
-        for (ItemStok s : daftarStok) {
-            System.out.printf("%-20s | %-5d | Rp%,d%n",
-                    s.getNama(),
-                    s.getJumlah(),
-                    s.getHargaBeli());
-        }
-        System.out.println("----------------------------------------");
-    }
-
     public void MajukanWaktu(int biayaAksi) {
         for (int i = 0; i < biayaAksi; i++) {
             this.waktuSimulasi++;
