@@ -38,6 +38,9 @@ public class Game {
                 case "3":
                     aksiLogistik();
                     break;
+                case "4":
+                    restoran.tampilkanStokBahan();
+                    break;
                 case "9":
                     aksiMajukanWaktu();
                     break;
@@ -65,6 +68,7 @@ public class Game {
         System.out.println("1. Layani Pelanggan (Kasir)");
         System.out.println("2. Masak Pesanan (Koki)");
         System.out.println("3. Restock Bahan (Logistik)");
+        System.out.println("4. Melihat Stok Bahan");
         System.out.println("9. Tunggu / Majukan Waktu");
         System.out.println("0. Keluar");
         System.out.print("Pilihan Anda: ");
